@@ -1,8 +1,11 @@
 import {isAndroid, isIPhone, isWeiXin} from './main/main.js';
-import './main/main.scss';
+import {ViewPDF } from './main/pdfViewer.js';
+
+import './main.scss';
 import '../static/assets/css/main.scss';
 import '../static/assets/vendor/flexible.js';
-import '../static/assets/vendor/normalize.min.scss';
+//import '../static/assets/vendor/pdf.js';
+//import '../static/assets/vendor/normalize.min.scss';
 import $ from 'webpack-zepto';
 // if (isAndroid()) {
 // }
@@ -38,3 +41,6 @@ $('.close-pop-layer').on('click', function (evt) {
         $('.pop-layer').removeClass('show');
     }, 350);
 });
+
+
+ViewPDF();
