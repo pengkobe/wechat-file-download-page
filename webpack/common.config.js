@@ -6,7 +6,7 @@ module.exports = {
     'app': [
       './src/bootstrap.js'
     ],
-    'vendor': './src/vendor.js'
+    'vendor': ['./static/assets/vendor/pdf.js','./src/vendor.js']// , './static/assets/vendor/flexible.js','./static/assets/vendor/pdf.worker.js'
   },
 
   resolve: {
@@ -24,7 +24,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader'] //, 'eslint-loader'
+        use: [{loader:'babel-loader',options:{compact: true}}] //, 'eslint-loader'
       },
 
       {

@@ -34,6 +34,7 @@ module.exports = webpackMerge(webpackCommon, {
       {
         test: /\.scss$/,
         use: [
+          
           {
             loader: 'style-loader'
           },
@@ -42,7 +43,7 @@ module.exports = webpackMerge(webpackCommon, {
             options: {
               importLoaders: 2,
               modules: true,
-              localIdentName: '[name]__[local]'
+              localIdentName: '[local]'//[name]__
             }
           },
           {
@@ -51,6 +52,13 @@ module.exports = webpackMerge(webpackCommon, {
               outputStyle: 'expanded',
               sourceMap: true,
               sourceMapContents: true
+            }
+          },
+          {
+            loader: 'px2rem-loader',
+            options: {
+              remUnit:75,
+              remPrecision:8
             }
           }
         ]

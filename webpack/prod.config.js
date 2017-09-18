@@ -45,7 +45,7 @@ module.exports = webpackMerge(webpackCommon, {
                 minimize: true,
                 sourceMap: true,
                 importLoaders: 2,
-                localIdentName: '[name]__[local]'
+                localIdentName: '[local]'//[name]__
               }
             },
             {
@@ -63,6 +63,13 @@ module.exports = webpackMerge(webpackCommon, {
                 outputStyle: 'expanded',
                 sourceMap: true,
                 sourceMapContents: true
+              }
+            },
+            {
+              loader: 'px2rem-loader',
+              options: {
+                remUnit:75,
+                remPrecision:8
               }
             }
           ]
