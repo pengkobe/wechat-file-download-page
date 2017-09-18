@@ -7,7 +7,6 @@
     var scale = 0;
     var tid;
     var flexible = lib.flexible || (lib.flexible = {});
-    
     if (metaEl) {
         console.warn('将根据已有的meta标签来设置缩放比例');
         var match = metaEl.getAttribute('content').match(/initial\-scale=([\d\.]+)/);
@@ -57,7 +56,8 @@
         metaEl.setAttribute('name', 'viewport');
         metaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
         if (docEl.firstElementChild) {
-            docEl.firstElementChild.appendChild(metaEl);
+            var head = doc.getElementsByTagName('head')[0];
+            head.appendChild(metaEl);
         } else {
             var wrap = doc.createElement('div');
             wrap.appendChild(metaEl);

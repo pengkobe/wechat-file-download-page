@@ -13,8 +13,10 @@
     <%= htmlWebpackPlugin.options.appName %>
   </title>
   <meta name="description" content="">
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- <script src="http://mozilla.github.io/pdf.js/build/pdf.worker.js"></script> -->
+  <script src="http://mozilla.github.io/pdf.js/build/pdf.js"></script>
 </head>
 
 <body>
@@ -22,9 +24,17 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
   <div class="container">
-
-    <a id="dowLoadFile" title="简报下载" target="_blank" class="download-button" href="http://www.eegrid.com/app/EFOS-TEST1.0.1.apk">
-    简报下载 </a>
+    <h1>PDF预览与下载</h1>
+    <div>
+      <button id="prev">前一页</button>
+      <button id="next">下一页</button>
+      <span>当前页:
+        <span id="page_num"></span> /
+        <span id="page_count"></span>
+      </span>
+      <a id="dowLoadFile" title="简报下载" target="_blank" class="download-button" href="#">简报下载 </a>
+    </div>
+    <canvas id="the-canvas"></canvas>
     <p class="footer">深圳市云设施网络有限公司2017</p>
   </div>
 

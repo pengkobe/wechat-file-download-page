@@ -1,8 +1,5 @@
-function ViewPDF() {
+function ViewPDF(url) {
     // If absolute URL from the remote server is provided, configure the CORS
-    // header on that server.
-    var url = '//cdn.mozilla.net/pdfjs/tracemonkey.pdf';
-
     // The workerSrc property shall be specified.
     PDFJS.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
 
@@ -22,9 +19,13 @@ function ViewPDF() {
         pageRendering = true;
         // Using promise to fetch the page
         pdfDoc.getPage(num).then(function (page) {
-            var viewport = page.getViewport(scale);
-            canvas.height = viewport.height;
-            canvas.width = viewport.width;
+            var accWidth = document.documentElement.clientWidth; 
+            var accHeight = document.documentElement.clientHeight; 
+            var viewport = page.getViewport(1);
+            scale = accWidth/viewport.width;
+            viewport = page.getViewport(scale);
+            canvas.height = accHeight;//viewport.height;
+            canvas.width = accWidth;//viewport.width;
 
             // Render PDF page into canvas context
             var renderContext = {
