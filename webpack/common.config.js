@@ -6,7 +6,7 @@ module.exports = {
     'app': [
       './src/bootstrap.js'
     ],
-    'vendor': ['./static/assets/vendor/pdf.js','./src/vendor.js']// , './static/assets/vendor/flexible.js','./static/assets/vendor/pdf.worker.js'
+    'vendor': ['./static/assets/vendor/flexible.js','./src/vendor.js']// './static/assets/vendor/pdf.js', './static/assets/vendor/pdf.worker.js'
   },
 
   resolve: {

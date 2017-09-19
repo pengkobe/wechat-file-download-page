@@ -4,6 +4,11 @@ html,body {
   margin: 0px;
 }
 
+#dowLoadFile{
+  position: absolute;
+  right: 10px;
+}
+
 .container {
   position: relative;
   width: 720px;
@@ -58,10 +63,19 @@ only screen and (min-resolution: 2.5dppx) {
 }
 
 #prev,#next{
-  width: 110px;/*px*/
-  height: 75px;/*px*/
   font-size: 24px;/*px*/
 }
+
+.icon_back { 
+  display: inline-block;
+  width: 120px;
+  background-image: url('../static/assets/img/icon_back_fff.png');
+   background-position: 12px center; 
+   background-repeat: no-repeat; width: 48px; height: 48px; 
+  background-size: contain;
+  background-color:cadetblue;
+
+  }
 
 
 .footer {
