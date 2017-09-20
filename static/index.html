@@ -16,7 +16,8 @@
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- <script src="http://mozilla.github.io/pdf.js/build/pdf.worker.js"></script> -->
-  <script src="http://mozilla.github.io/pdf.js/build/pdf.js"></script>
+  <!-- <script src="http://mozilla.github.io/pdf.js/build/pdf.js"></script> -->
+  <script src="./assets/vendor/pdf.min.js"></script>
 </head>
 
 <body>
@@ -24,7 +25,7 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
   <div class="container">
-    <h1><div class="icon_back" onclick="history.back();"></div>返回</h1>
+    <h1 onclick="history.back();"><div class="icon_back" ></div> <span class="back_text">返回</span></h1>
     <div>
       <button id="prev">前一页</button>
       <button id="next">下一页</button>
@@ -34,6 +35,7 @@
       </span>
       <a id="dowLoadFile" title="简报下载" target="_blank" class="download-button" href="#">简报下载 </a>
     </div>
+    <div id="loadingTips">加载中...</div>
     <canvas id="the-canvas"></canvas>
     <p class="footer">深圳市云设施网络有限公司2017</p>
   </div>
