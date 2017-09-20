@@ -22,7 +22,7 @@ it should works just fine!
 ![](./demo.jpg)
 
 ## Speical Thanks
-[es6-webpack2-starter](https://github.com/micooz/es6-webpack2-starter)
-
+* [es6-webpack2-starter](https://github.com/micooz/es6-webpack2-starter)
+* [pdf.js](https://mozilla.github.io/pdf.js/)
 ## License
 MIT@eegrid.com
