@@ -12,7 +12,6 @@ html,body {
 .container {
   position: relative;
   width: 720px;
-  height: 1160px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   margin: auto;
@@ -61,6 +60,9 @@ only screen and (min-resolution: 2.5dppx) {
       background-image:url('../static/assets/img/@3x/wx_tip_confirm.png');
   }
 }
+#loadingTips{
+  margin-top:50px;
+}
 
 #prev,#next{
   font-size: 24px;/*px*/
@@ -74,9 +76,12 @@ only screen and (min-resolution: 2.5dppx) {
    background-repeat: no-repeat; width: 48px; height: 48px; 
   background-size: contain;
   background-color:cadetblue;
+  vertical-align: middle;
 
   }
-
+.back_text{
+  vertical-align: middle;
+}
 
 .footer {
   position: absolute;

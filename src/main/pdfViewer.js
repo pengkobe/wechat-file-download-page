@@ -1,7 +1,7 @@
 function ViewPDF(url) {
     // If absolute URL from the remote server is provided, configure the CORS
     // The workerSrc property shall be specified.
-    PDFJS.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
+    PDFJS.workerSrc = './assets/vendor/pdf.worker.min.js';
 
     var pdfDoc = null,
         pageNum = 1,
@@ -36,6 +36,8 @@ function ViewPDF(url) {
 
             // Wait for rendering to finish
             renderTask.promise.then(function () {
+                var div1=document.getElementById("loadingTips");  
+                div1.style.display='none';  
                 pageRendering = false;
                 if (pageNumPending !== null) {
                     // New page rendering is pending

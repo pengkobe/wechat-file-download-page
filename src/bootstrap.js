@@ -33,17 +33,15 @@ if(!url){
 /** 
  * 下载 UI 逻辑
 */
-
-
 $('#dowLoadFile').attr("href",url);
 $('#dowLoadFile').on('click', function (evt) {
-    //if (isWeiXin()) {// isWeiXin()
+    if (isWeiXin()) {// isWeiXin()
         $('.pop-layer').addClass('show');
         var scrollHeight = document.body.scrollHeight;
         $('.pop-layer').css('height', scrollHeight);
         evt.preventDefault();
         return false;
-    //}
+    }
 });
 
 $('.close-pop-layer').on('click', function (evt) {
