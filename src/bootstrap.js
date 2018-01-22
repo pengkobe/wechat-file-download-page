@@ -8,12 +8,12 @@ import '../static/assets/vendor/normalize.min.scss';
 import $ from 'webpack-zepto';
 
 /**
- * 获取 query 中参数
+ * 获取 query 中参数 unescape
  */
 function getQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
     var r = window.location.search.substr(1).match(reg);
-    if (r != null) return unescape(r[2]); return null;
+    if (r != null) return (r[2]); return null;
 }
 let url = getQueryString("url");
 if (!url) {
