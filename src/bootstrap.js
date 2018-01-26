@@ -3,6 +3,8 @@ import { ViewPDF } from './util/pdfViewer.js';
 
 import './main.scss';
 import '../static/assets/css/main.scss';
+
+import '../static/assets/vendor/hammer.min.js';
 import '../static/assets/vendor/flexible.js';
 import '../static/assets/vendor/normalize.min.scss';
 import $ from 'webpack-zepto';
@@ -38,6 +40,4 @@ if (!url) {
         }, 350);
     });
     ViewPDF(url);
-
 }
-

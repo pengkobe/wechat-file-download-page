@@ -24,24 +24,26 @@
   <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-  <div class="container">
-    <h1 onclick="history.back();"><div class="icon_back" ></div> <span class="back_text">返回</span></h1>
-    <div>
-      <button id="prev">前一页</button>
-      <button id="next">下一页</button>
-      <span>当前页:
-        <span id="page_num"></span> /
-        <span id="page_count"></span>
-      </span>
-      <a id="dowLoadFile" title="简报下载" target="_blank" class="download-button" href="javascript:void(0)">下载 </a>
-    </div>
+  <div class="container" id="container">
+    <!-- <h1 onclick="history.back();">
+      <div class="icon_back"></div>
+      <span class="back_text">返回</span>
+    </h1> -->
     <div id="loadingTips">加载中...</div>
     <canvas id="the-canvas"></canvas>
-    <p class="footer">深圳市云设施网络有限公司2017</p>
   </div>
 
   <div class="pop-layer">
     <div class="close-pop-layer"></div>
+  </div>
+
+  <div class="download-button">
+    <a id="dowLoadFile" title="简报下载" target="_blank" href="javascript:void(0)">下载 </a>
+  </div>
+
+  <div class="page-nav-area">
+    <span id="page_num"></span> /
+    <span id="page_count"></span>
   </div>
 
 </body>
