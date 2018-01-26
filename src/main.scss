@@ -1,9 +1,9 @@
-html,body {
+html,
+body {
   width: 100%;
   height: 100%;
   margin: 0px;
 }
-
 
 .container {
   position: relative;
@@ -12,70 +12,70 @@ html,body {
   background-repeat: no-repeat;
   margin: auto;
 }
-.pop-layer{
+.pop-layer {
   display: none;
 }
-.pop-layer.show{
+.pop-layer.show {
   display: block;
   position: absolute;
-  top:0px;
+  top: 0px;
   left: 0px;
   z-index: 100;
-  width:100%;
+  width: 100%;
   height: 100%;
-  background-image:url('../static/assets/img/wx_tip_bg.png');
+  background-image: url('../static/assets/img/wx_tip_bg.png');
   background-size: 720px 500px;
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0.7);
-  color:  white;
+  color: white;
 }
-.close-pop-layer{
-  -webkit-tap-highlight-color:rgba(0,0,0,0);
+.close-pop-layer {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   position: absolute;
-  top:710px;
+  top: 710px;
   left: 365px;
-  width:176px;
+  width: 176px;
   height: 153px;
-  background:url('../static/assets/img/wx_tip_confirm.png');
+  background: url('../static/assets/img/wx_tip_confirm.png');
   background-size: 176px 153px;
 }
 
-
-
 /*适配 dpr > 2.5 */
 @media only screen and (-webkit-min-device-pixel-ratio: 2.5),
-only screen and (min--moz-device-pixel-ratio: 2.5), /* 注意这里的写法比较特殊 */
-only screen and (-o-min-device-pixel-ratio: 5/2),
-only screen and (min-device-pixel-ratio: 2.5),
-only screen and (min-resolution: 240dpi),
-only screen and (min-resolution: 2.5dppx) {
-  .pop-layer.show{
-      background-image:url('../static/assets/img/@3x/wx_tip_bg.png');
+  only screen and (min--moz-device-pixel-ratio: 2.5),
+  only screen and (-o-min-device-pixel-ratio: 5/2),
+  only screen and (min-device-pixel-ratio: 2.5),
+  only screen and (min-resolution: 240dpi),
+  only screen and (min-resolution: 2.5dppx) {
+  .pop-layer.show {
+    background-image: url('../static/assets/img/@3x/wx_tip_bg.png');
   }
-  .close-pop-layer{
-      background-image:url('../static/assets/img/@3x/wx_tip_confirm.png');
+  .close-pop-layer {
+    background-image: url('../static/assets/img/@3x/wx_tip_confirm.png');
   }
 }
-#loadingTips{
-  margin-top:50px;
+#loadingTips {
+  margin-top: 50px;
 }
 
-#prev,#next{
-  font-size: 24px;/*px*/
+#prev,
+#next {
+  font-size: 24px; /*px*/
 }
 
-.icon_back { 
+.icon_back {
   display: inline-block;
   width: 120px;
   background-image: url('../static/assets/img/icon_back_fff.png');
-   background-position: 12px center; 
-   background-repeat: no-repeat; width: 48px; height: 48px; 
+  background-position: 12px center;
+  background-repeat: no-repeat;
+  width: 48px;
+  height: 48px;
   background-size: contain;
-  background-color:cadetblue;
+  background-color: cadetblue;
   vertical-align: middle;
-
-  }
-.back_text{
+}
+.back_text {
   vertical-align: middle;
 }
 
@@ -83,36 +83,37 @@ only screen and (min-resolution: 2.5dppx) {
   position: absolute;
   bottom: 1%;
   width: 100%;
-  font-size: 24px;/*px*/
+  font-size: 24px; /*px*/
   color: #eee;
   text-align: center;
   color: black;
 }
 
-.download-button{
+.download-button {
+  background-image: url(../static/assets/img/20118.svg);
+  background-size: contain;
   position: fixed;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background:#ccc;
+  width: 140px;
+  height: 140px;
   right: 10px;
-  bottom: 50px;
-  display:flex;/*Flex布局*/
+  bottom: 34px;
+  display: flex; /*Flex布局*/
   display: -webkit-flex; /* Safari */
-  align-items:center;/*指定垂直居中*/
-}
-#dowLoadFile{
-  text-align: center;
-  width: 100%;
+  align-items: center; /*指定垂直居中*/
 }
 
-.page-nav-area{
+.page-nav-area {
   position: fixed;
-  bottom: 40px;
+  bottom: 50px;
   text-align: center;
   display: block;
   width: 80px;
   left: 50%;
-  background: #bbb;
+  font-size: 28px;
+  background: #999;
+  color: #fff;
   transform: translateX(-30px);
+  border-radius: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }

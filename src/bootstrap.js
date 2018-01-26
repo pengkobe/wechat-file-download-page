@@ -13,31 +13,39 @@ import $ from 'webpack-zepto';
  * 获取 query 中参数 unescape
  */
 function getQueryString(name) {
-    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-    var r = window.location.search.substr(1).match(reg);
-    if (r != null) return decodeURI(r[2]); return null;
+  var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+  var r = window.location.search.substr(1).match(reg);
+  if (r != null) return decodeURI(r[2]);
+  return null;
 }
-let url = getQueryString("url");
-if (!url) {
-    $("#dowLoadFile").hide();
-    alert("下载链接不合法！")
-} else {
-    $('#dowLoadFile').attr("href", url);
-    $('#dowLoadFile').on('click', function (evt) {
-        if (isWeiXin()) {
-            $('.pop-layer').addClass('show');
-            var scrollHeight = document.body.scrollHeight;
-            $('.pop-layer').css('height', scrollHeight);
-            evt.preventDefault();
-            return false;
-        }
-    });
+let url = getQueryString('url');
 
-    $('.close-pop-layer').on('click', function (evt) {
-        // 防点击穿透事件
-        setTimeout(function () {
-            $('.pop-layer').removeClass('show');
-        }, 350);
-    });
-    ViewPDF(url);
+let type = getQueryString('type');
+if (type && type === 'wepush') {
+} else {
+  $('#backToApp').show();
+}
+
+if (!url) {
+  $('#dowLoadFile').hide();
+  alert('下载链接不合法！');
+} else {
+  $('#dowLoadFile').attr('href', url);
+  $('#dowLoadFile').on('click', function(evt) {
+    if (isWeiXin()) {
+      $('.pop-layer').addClass('show');
+      var scrollHeight = document.body.scrollHeight;
+      $('.pop-layer').css('height', scrollHeight);
+      evt.preventDefault();
+      return false;
+    }
+  });
+
+  $('.close-pop-layer').on('click', function(evt) {
+    // 防点击穿透事件
+    setTimeout(function() {
+      $('.pop-layer').removeClass('show');
+    }, 350);
+  });
+  ViewPDF(url);
 }

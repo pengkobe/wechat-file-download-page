@@ -57,7 +57,7 @@ module.exports = webpackMerge(webpackCommon, {
           {
             loader: 'px2rem-loader',
             options: {
-              remUnit:75,
+              remUnit:72,
               remPrecision:8
             }
           }

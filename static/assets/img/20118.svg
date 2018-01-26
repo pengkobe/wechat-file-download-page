@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="124" height="124" viewBox="0 0 124 124">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1fb5ff;
+        filter: url(#outer-glow-1);
+      }
+
+      .cls-2 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+
+    <filter id="outer-glow-1" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="5.333" in="SourceAlpha"/>
+      <feComposite/>
+      <feComposite/>
+      <feComposite result="outerGlowBlur"/>
+      <feFlood flood-color="#1fb5ff" flood-opacity="0.35"/>
+      <feComposite operator="in" in2="outerGlowBlur"/>
+      <feBlend in2="SourceGraphic" result="outerGlow"/>
+      <feComposite in="SourceGraphic" result="shadowed"/>
+    </filter>
+  </defs>
+  <g>
+    <circle cx="62" cy="62" r="48" class="cls-1"/>
+    <path d="M77.293,83.063 L47.697,83.063 C46.075,83.063 44.995,81.975 44.995,80.343 C44.995,78.712 46.075,77.624 47.697,77.624 L77.293,77.624 C78.914,77.624 79.970,78.712 79.995,80.343 C79.995,81.975 78.914,83.063 77.293,83.063 ZM63.858,71.394 C63.318,71.938 62.777,72.210 61.967,72.210 C61.426,72.210 60.616,71.938 60.076,71.394 L50.398,61.900 C49.318,60.837 49.318,59.205 50.398,58.118 C51.454,57.030 53.075,57.030 54.156,58.118 L59.240,63.285 L59.240,43.779 C59.240,42.147 60.321,41.059 61.942,41.059 C63.563,41.059 64.644,42.419 64.644,43.779 L64.644,63.013 L69.507,58.143 C70.563,57.055 72.184,57.055 73.265,58.143 C74.346,59.205 74.346,60.837 73.265,61.925 L63.858,71.394 Z" class="cls-2"/>
+  </g>
+</svg>

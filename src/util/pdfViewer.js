@@ -5,7 +5,7 @@ function ViewPDF(url) {
   // The workerSrc property shall be specified.
   PDFJS.workerSrc = './assets/vendor/pdf.worker.min.js';
 
-  var pdfDoc = null,
+  let pdfDoc = null,
     pageNum = 1,
     pageRendering = false,
     pageNumPending = null,
@@ -21,20 +21,21 @@ function ViewPDF(url) {
     pageRendering = true;
     // Using promise to fetch the page
     pdfDoc.getPage(num).then(function(page) {
-      var accWidth = document.documentElement.clientWidth;
-      var accHeight = document.documentElement.clientHeight;
-      var viewport = page.getViewport(1);
+      const accWidth = document.documentElement.clientWidth;
+      const accHeight = document.documentElement.clientHeight;
+      let viewport = page.getViewport(1);
+
       scale = accWidth / viewport.width;
       viewport = page.getViewport(scale);
       canvas.height = accHeight; //viewport.height;
       canvas.width = accWidth; //viewport.width;
 
       // Render PDF page into canvas context
-      var renderContext = {
+      const renderContext = {
         canvasContext: ctx,
         viewport: viewport,
       };
-      var renderTask = page.render(renderContext);
+      const renderTask = page.render(renderContext);
 
       // Wait for rendering to finish
       renderTask.promise.then(function() {
@@ -63,30 +64,6 @@ function ViewPDF(url) {
       renderPage(num);
     }
   }
-
-  /**
-   * Displays previous page.
-   */
-  // function onPrevPage() {
-  //     if (pageNum <= 1) {
-  //         return;
-  //     }
-  //     pageNum--;
-  //     queueRenderPage(pageNum);
-  // }
-  // document.getElementById('prev').addEventListener('click', onPrevPage);
-
-  /**
-   * Displays next page.
-   */
-  // function onNextPage() {
-  //     if (pageNum >= pdfDoc.numPages) {
-  //         return;
-  //     }
-  //     pageNum++;
-  //     queueRenderPage(pageNum);
-  // }
-  // document.getElementById('next').addEventListener('click', onNextPage);
 
   const myElement = document.getElementById('container');
   // Create a manager to manager the element
